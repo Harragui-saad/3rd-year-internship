@@ -1,0 +1,100 @@
+1. Contexte et Objectifs
+
+L’entreprise dispose d’un entrepôt divisé en plusieurs zones (Zone1, Zone2, …). Les produits sont stockés à différents emplacements et doivent être préparés et expédiés selon des commandes clients.
+L’objectif du projet est de :
+
+Optimiser le parcours des préparateurs (réduction des distances parcourues).
+
+Gérer les priorités des produits (urgents, standards, etc.).
+
+Suivre l’état des stocks en temps réel.
+
+Suivre les livraisons et éviter les doublons d’expédition.
+
+Générer un bilan mensuel des mouvements (produits, argent entrant/sortant).
+
+2. Périmètre du Projet
+
+Le système doit couvrir :
+
+Gestion des produits : enregistrement, mise à jour, disponibilité, priorité, emplacement.
+
+Gestion des commandes : création, suivi, préparation, expédition.
+
+Optimisation des trajets : algorithme basé sur Q-Learning pour minimiser les distances de préparation.
+
+Suivi des expéditions : nombre d’expéditions par produit, état (livré, en cours, annulé).
+
+Bilan mensuel : génération d’un rapport avec :
+
+Produits entrés et sortis
+
+Valeur financière (ventes, dépenses)
+
+Statistiques sur les délais et la performance
+
+3. Contraintes Fonctionnelles
+
+Le système doit être connecté à une base de données Microsoft Access contenant :
+
+Produits
+
+Commandes et lignes de commandes
+
+Expéditions
+
+Transactions (finance)
+
+Distances entre zones
+
+Le système doit permettre :
+
+Priorisation des produits (urgent > normal > faible).
+
+Vérification de la disponibilité en stock avant expédition.
+
+Vérification qu’un produit n’est pas expédié deux fois.
+
+Historisation des expéditions et des transactions.
+
+L’algorithme d’optimisation doit prendre en compte :
+
+Distance à parcourir
+
+Priorité des produits
+
+Quantité demandée
+
+État des expéditions (déjà livré ou non)
+
+4. Contraintes Techniques
+
+Backend : Python (Q-Learning + connexion DB)
+
+Base de données : can be sql or others
+
+Interface graphique : PyQt5 ou Tkinter
+
+Export de rapports : génération de fichiers Excel/CSV/PDF
+
+5. Contraintes Non Fonctionnelles
+
+Performance : temps de calcul des trajets < 2s pour 100 commandes.
+
+Fiabilité : base de données doit conserver un historique complet.
+
+Évolutivité : possibilité d’ajouter d’autres zones/produits facilement.
+
+Sécurité : accès au système protégé par identifiant/mot de passe.
+
+6. Livrables
+
+Base de données Access avec tables et données de test.
+
+Algorithme d’optimisation en Python.
+
+Interface graphique (si demandée).
+
+Documentation technique et guide utilisateur.
+
+Rapport mensuel généré automatiquement (Excel ou PDF).
